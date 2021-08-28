@@ -8,12 +8,15 @@ const createQueue = require('./src/queue');
 const createEvents = require('./src/event');
 const createTranslator = require('./src/translate');
 
-async function main({ url, lang = 'en-US', segmentSize = 10, segmentBuffer = 20, showLogs = false, outputCallback = console.log, isVideo = false, translateTo = null }) {
+async function main({ url, lang = 'en-US', segmentSize = 10, segmentBuffer = 20, showLogs = false, outputCallback = console.log, isVideo = false, translateTo = null, onEndCallback = () => {} }) {
     let lastPath;
 
     const onEnd = () => {
         if (showLogs) console.log('[EVENT] Finished');
-        if (isVideo) process.exit(0);
+        if (isVideo) {
+            onEndCallback();
+            process.exit(0);
+        }
     };
 
     const disposer = text => {

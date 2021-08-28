@@ -1,0 +1,25 @@
+{
+  "name": "live-utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "yt-tl": "bin"
+  },
+  "scripts": {
+    "start": "node bin",
+    "test": "node index.test.js"
+  },
+  "dependencies": {
+    "@azure/cognitiveservices-translatortext": "^1.0.1",
+    "@azure/ms-rest-azure-js": "^2.1.0",
+    "@giancarl021/locate": "^0.1.3",
+    "chokidar": "^3.5.2",
+    "dotenv": "^10.0.0",
+    "ffmpeg-static": "^4.4.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "microsoft-cognitiveservices-speech-sdk": "^1.18.1",
+    "p-queue": "^7.1.0",
+    "ytdl-core": "^4.9.1"
+  }
+}
